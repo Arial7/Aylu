@@ -1,7 +1,16 @@
 /// <reference path="../typings/index.d.ts" />
 "use strict";
+var sink_1 = require("./sink");
+var source_1 = require("./source");
+exports.Source = source_1.AyluSource;
+exports.sinks = {
+    Console: sink_1.ConsoleSink,
+    File: sink_1.FileSink
+};
 var Aylu = (function () {
     function Aylu() {
+        this.sinks = [];
+        this.sources = [];
     }
     ;
     Aylu.prototype.addSink = function (sink) {
@@ -30,6 +39,5 @@ var Aylu = (function () {
     ;
     return Aylu;
 }());
-exports.__esModule = true;
-exports["default"] = Aylu;
+exports.Aylu = Aylu;
 ;

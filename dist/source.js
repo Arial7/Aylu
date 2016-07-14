@@ -56,6 +56,5 @@ var AyluSource = (function (_super) {
     ;
     return AyluSource;
 }(EventEmitter));
-exports.__esModule = true;
-exports["default"] = AyluSource;
+exports.AyluSource = AyluSource;
 ;

@@ -1,14 +1,21 @@
 /// <reference path="../typings/index.d.ts" />
 
-import { AyluSink } from "./sink";
-import { AyluSource } from "./source";
+import { AyluSink, ConsoleSink, FileSink } from "./sink";
+import { AyluSource} from "./source";
 
-export default class Aylu {
+export var Source = AyluSource;
+export var sinks = {
+    Console: ConsoleSink,
+    File: FileSink
+};
+
+export class Aylu {
     sinks: AyluSink[];
     sources: AyluSource[];
 
     constructor() {
-
+        this.sinks = [];
+        this.sources = [];
     };
 
     public addSink(sink: AyluSink): void {
@@ -32,7 +39,5 @@ export default class Aylu {
             source.on("aylu-fatal", sink.write);
         }
     };
-
-
 };
 
