@@ -52,8 +52,6 @@ var ConsoleSink = (function () {
         this.useColor = (useColor === undefined) ? true : useColor;
     }
     ;
-    ConsoleSink.prototype.flush = function () { };
-    ;
     return ConsoleSink;
 }());
 exports.ConsoleSink = ConsoleSink;
@@ -82,9 +80,6 @@ var FileSink = (function () {
                 }
                 _this.writeStream.write(wholeMessage + "\n");
             }
-        };
-        this.flush = function () {
-            _this.writeStream.end();
         };
         this.filePath = filePath;
         this.preOpenQueue = [];
