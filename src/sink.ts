@@ -5,7 +5,6 @@ import * as fs from "fs";
 
 export interface AyluSink {
     write(params: { level: string, sender: string, message: string });
-    flush(): void;
 };
 
 export class ConsoleSink implements AyluSink {
@@ -60,10 +59,6 @@ export class ConsoleSink implements AyluSink {
                 break;
         };
     };
-
-    public flush(): void {};
-
-
 };
 
 export class FileSink implements AyluSink {
@@ -107,12 +102,5 @@ export class FileSink implements AyluSink {
 
             this.writeStream.write(wholeMessage + "\n");
         }
-
     };
-
-
-    flush = () => {
-        this.writeStream.end();
-    };
-
 };

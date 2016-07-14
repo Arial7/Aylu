@@ -10,8 +10,8 @@ export var sinks = {
 };
 
 export class Aylu {
-    sinks: AyluSink[];
-    sources: AyluSource[];
+    private sinks: AyluSink[];
+    private sources: AyluSource[];
 
     constructor() {
         this.sinks = [];
