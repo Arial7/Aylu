@@ -2,9 +2,8 @@
 
 import * as events from "events";
 
-const EventEmitter = events.EventEmitter;
 
-export class AyluSource extends EventEmitter {
+export class AyluSource extends events.EventEmitter {
     constructor(private sender: string) {
         super();
     };

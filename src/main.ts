@@ -3,11 +3,8 @@
 import { AyluSink, ConsoleSink, FileSink } from "./sink";
 import { AyluSource} from "./source";
 
-export var Source = AyluSource;
-export var sinks = {
-    Console: ConsoleSink,
-    File: FileSink
-};
+export * from "./sink";
+export * from "./source";
 
 export class Aylu {
     private sinks: AyluSink[];

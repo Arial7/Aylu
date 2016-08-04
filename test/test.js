@@ -1,18 +1,16 @@
 /// <reference path="../typings/index.d.ts" />
-var Aylu = require("../dist/main").Aylu;
-var AyluSource = require("../dist/main").Source;
-var ConsoleSink = require("../dist/main").sinks.Console;
-var FileSink = require("../dist/main").sinks.File;
-var master = new Aylu();
-var logger1 = new AyluSource("Sender 1");
-var logger2 = new AyluSource("Sender 2");
-var fileLogger = new AyluSource("FileTester");
-var fileTester = new Aylu();
+"use strict";
+var main_1 = require("../dist/main");
+var master = new main_1.Aylu();
+var logger1 = new main_1.AyluSource("Sender 1");
+var logger2 = new main_1.AyluSource("Sender 2");
+var fileLogger = new main_1.AyluSource("FileTester");
+var fileTester = new main_1.Aylu();
 master.addSource(logger1);
 master.addSource(logger2);
-var sink1 = new ConsoleSink();
+var sink1 = new main_1.ConsoleSink();
 master.addSink(sink1);
-var fileSink = new FileSink("./output.log");
+var fileSink = new main_1.FileSink("./output.log");
 master.addSink(fileSink);
 fileTester.addSink(fileSink);
 fileTester.addSource(fileLogger);

@@ -1,8 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
-const Aylu = require("../dist/main").Aylu;
-const AyluSource = require("../dist/main").Source;
-const ConsoleSink = require("../dist/main").sinks.Console;
-const FileSink = require("../dist/main").sinks.File;
+
+import { Aylu, AyluSource, ConsoleSink, FileSink } from "../dist/main";
+
 
 let master = new Aylu();
 
