@@ -1,4 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
 export interface AyluSink {
     write(params: {
         level: string;

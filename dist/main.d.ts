@@ -1,4 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
 import { AyluSink } from "./sink";
 import { AyluSource } from "./source";
 export * from "./sink";

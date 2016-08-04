@@ -1,6 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
-import * as events from "events";
-export declare class AyluSource extends events.EventEmitter {
+export declare class AyluSource {
     private sender;
     constructor(sender: string);
     debug(message: string): void;
