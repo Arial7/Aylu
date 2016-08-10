@@ -2,6 +2,8 @@ import { AyluSink } from "./sink";
 import { AyluSource } from "./source";
 export * from "./sink";
 export * from "./source";
+export * from "./loglevel";
+
 export declare class Aylu {
     private sinks;
     private sources;

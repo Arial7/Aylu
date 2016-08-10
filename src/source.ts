@@ -1,7 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
 
 import * as events from "events";
-
+import { LogLevel } from "./loglevel";
 
 export class AyluSource extends events.EventEmitter {
     constructor(private sender: string) {
@@ -10,7 +10,7 @@ export class AyluSource extends events.EventEmitter {
     
     public debug(message: string): void {
         this.emit("aylu-debug", { 
-            level: "DEB",
+            level: LogLevel.DEBUG,
             sender: this.sender,
             message: message
         });
@@ -18,7 +18,7 @@ export class AyluSource extends events.EventEmitter {
     
     public info(message: string): void {
         this.emit("aylu-info", {
-            level: "INF",
+            level: LogLevel.INFO,
             sender: this.sender,
             message: message
         });
@@ -26,7 +26,7 @@ export class AyluSource extends events.EventEmitter {
 
     public warn(message: string): void {
         this.emit("aylu-warn", {
-            level: "WRN",
+            level: LogLevel.WARN,
             sender: this.sender,
             message: message
         });
@@ -34,7 +34,7 @@ export class AyluSource extends events.EventEmitter {
 
     public error(message: string): void {
         this.emit("aylu-error", {
-            level: "ERR",
+            level: LogLevel.ERROR,
             sender: this.sender,
             message: message
         });
@@ -42,7 +42,7 @@ export class AyluSource extends events.EventEmitter {
 
     public fatal(message: string): void {
         this.emit("aylu-fatal", {
-            level: "FAT",
+            level: LogLevel.FATAL,
             sender: this.sender,
             message: message
         });

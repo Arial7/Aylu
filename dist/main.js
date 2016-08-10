@@ -5,6 +5,7 @@ function __export(m) {
 }
 __export(require("./sink"));
 __export(require("./source"));
+__export(require("./loglevel"));
 var Aylu = (function () {
     function Aylu() {
         this.sinks = [];

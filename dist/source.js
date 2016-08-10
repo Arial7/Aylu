@@ -15,7 +15,7 @@ var AyluSource = (function (_super) {
     ;
     AyluSource.prototype.debug = function (message) {
         this.emit("aylu-debug", {
-            level: "DEB",
+            level: 0 /* DEBUG */,
             sender: this.sender,
             message: message
         });
@@ -23,7 +23,7 @@ var AyluSource = (function (_super) {
     ;
     AyluSource.prototype.info = function (message) {
         this.emit("aylu-info", {
-            level: "INF",
+            level: 1 /* INFO */,
             sender: this.sender,
             message: message
         });
@@ -31,7 +31,7 @@ var AyluSource = (function (_super) {
     ;
     AyluSource.prototype.warn = function (message) {
         this.emit("aylu-warn", {
-            level: "WRN",
+            level: 2 /* WARN */,
             sender: this.sender,
             message: message
         });
@@ -39,7 +39,7 @@ var AyluSource = (function (_super) {
     ;
     AyluSource.prototype.error = function (message) {
         this.emit("aylu-error", {
-            level: "ERR",
+            level: 3 /* ERROR */,
             sender: this.sender,
             message: message
         });
@@ -47,7 +47,7 @@ var AyluSource = (function (_super) {
     ;
     AyluSource.prototype.fatal = function (message) {
         this.emit("aylu-fatal", {
-            level: "FAT",
+            level: 4 /* FATAL */,
             sender: this.sender,
             message: message
         });

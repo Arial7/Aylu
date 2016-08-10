@@ -24,6 +24,11 @@ setTimeout(function () {
 setTimeout(function () {
     logger1.error("Hallo Welt! - 5");
 }, 1000);
+logger1.info("Now setting minimumLevel on Console to ERROR");
+sink1.setMinimumLevel(3 /* ERROR */);
+logger1.info("You should not see this in the console");
+sink1.setMinimumLevel(0 /* DEBUG */);
+logger1.debug("You should see this!");
 logger1.info("Now testing 1.000.000 writes to file");
 for (var i = 0; i < 1000000; i++) {
     fileLogger.info("File Output: " + i);

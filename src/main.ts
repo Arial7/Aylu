@@ -2,9 +2,11 @@
 
 import { AyluSink, ConsoleSink, FileSink } from "./sink";
 import { AyluSource} from "./source";
+import { LogLevel } from "./loglevel";
 
 export * from "./sink";
 export * from "./source";
+export * from "./loglevel";
 
 export class Aylu {
     private sinks: AyluSink[];

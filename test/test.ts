@@ -1,6 +1,6 @@
 /// <reference path="../typings/index.d.ts" />
 
-import { Aylu, AyluSource, ConsoleSink, FileSink } from "../dist/main";
+import { Aylu, AyluSource, ConsoleSink, FileSink, LogLevel } from "../dist/main";
 
 
 let master = new Aylu();
@@ -33,6 +33,12 @@ setTimeout(() => {
 setTimeout(() => {
     logger1.error("Hallo Welt! - 5");
 }, 1000);
+
+logger1.info("Now setting minimumLevel on Console to ERROR");
+sink1.setMinimumLevel(LogLevel.ERROR);
+logger1.info("You should not see this in the console");
+sink1.setMinimumLevel(LogLevel.DEBUG);
+logger1.debug("You should see this!");
 
 logger1.info("Now testing 1.000.000 writes to file");
 for (let i = 0; i < 1000000; i++) {
