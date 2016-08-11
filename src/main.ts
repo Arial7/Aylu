@@ -38,5 +38,20 @@ export class Aylu {
             source.on("aylu-fatal", sink.write);
         }
     };
+
+    public static logLevelToString(level: LogLevel): string {
+        switch(level) {
+            case LogLevel.DEBUG:
+                return "Debug";
+            case LogLevel.INFO:
+                return "Info";
+            case LogLevel.WARN:
+                return "Warn";
+            case LogLevel.ERROR:
+                return "Error";
+            case LogLevel.FATAL:
+                return "Fatal";
+        };
+    };
 };
 

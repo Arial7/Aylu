@@ -36,6 +36,22 @@ var Aylu = (function () {
         }
     };
     ;
+    Aylu.logLevelToString = function (level) {
+        switch (level) {
+            case 0 /* DEBUG */:
+                return "Debug";
+            case 1 /* INFO */:
+                return "Info";
+            case 2 /* WARN */:
+                return "Warn";
+            case 3 /* ERROR */:
+                return "Error";
+            case 4 /* FATAL */:
+                return "Fatal";
+        }
+        ;
+    };
+    ;
     return Aylu;
 }());
 exports.Aylu = Aylu;

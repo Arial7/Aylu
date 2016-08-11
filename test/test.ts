@@ -37,6 +37,7 @@ setTimeout(() => {
 logger1.info("Now setting minimumLevel on Console to ERROR");
 sink1.setMinimumLevel(LogLevel.ERROR);
 logger1.info("You should not see this in the console");
+logger1.error("You should see this in the console");
 sink1.setMinimumLevel(LogLevel.DEBUG);
 logger1.debug("You should see this!");
 
